@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "bumble",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.bumble",
+				"match": "\\b(if|while|for)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.bumble",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bumble",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers":{
+			"name": "number.literal.bumble",
+			"patterns":[
+				{
+					"name": "constant.numeric.bumble",
+					"match": "\\d*(\\.\\d*)?"
+				}
+			]
+		}
+	},
+	"scopeName": "source.bumble"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "bumble",
+    "displayName": "bumble",
+    "description": "bumble for vsc",
+    "version": "0.0.1",
+    "publisher": "0xad",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bumble",
+            "aliases": ["bumble", "bumble"],
+            "extensions": [".bumble"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bumble",
+            "scopeName": "source.bumble",
+            "path": "./syntaxes/bumble.tmLanguage.json"
+        }]
+    }
+}
