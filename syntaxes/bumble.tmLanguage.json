@@ -3,7 +3,10 @@
 	"name": "bumble",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#variables"
+		},
+		{
+			"include": "#operators"
 		},
 		{
 			"include": "#strings"
@@ -13,11 +16,14 @@
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.bumble",
-				"match": "\\b(if|while|for)\\b"
-			}]
+		"operators": {
+			"name": "operators.bumble",
+			"patterns": [
+				{
+					"name":"keyword.operator",
+					"match": "=|\\(|\\)"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.bumble",
@@ -30,12 +36,21 @@
 				}
 			]
 		},
+		"variables":{
+			"name": "variable.bumble",
+			"patterns": [
+				{
+					"name":"variable.name.bumble",
+					"match": "(?:\\b([A-Za-z_]\\w*)\\b|`(?:[^\\\\`]|\\\\.)*`)(?:\\s*\\.\\s*(?:\\b([A-Za-z_]\\w*)\\b|`(?:[^\\\\`]|\\\\.)*`))*(?=\\s*[=()])"
+				}
+			]
+		},
 		"numbers":{
 			"name": "number.literal.bumble",
 			"patterns":[
 				{
 					"name": "constant.numeric.bumble",
-					"match": "\\d*(\\.\\d*)?"
+					"match": "\\b\\d*(\\.\\d+)?"
 				}
 			]
 		}
